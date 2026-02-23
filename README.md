@@ -238,3 +238,6 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 - Change `author-info-aside.html` to `author-section.html`
 - Associate label for search
 - Various style changes
+
+1.8.03
+- Adjustments to `icon` class for size and positioning

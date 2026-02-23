@@ -943,11 +943,11 @@ pre.mermaid {
 }
 
 .ico, .icon {
-  height: 1.15em;
-  width: 1.15em;
+  height: 1em;
+  width: 1em;
   display: inline;
   position: relative;
-  top: 3px;
+  top: 4px;
 }
 
 .ico-sm .ico {
