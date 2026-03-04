@@ -241,3 +241,9 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 
 1.8.03
 - Adjustments to `icon` class for size and positioning
+
+1.8.04
+- Remove `filter` from `<blockquote>`
+- Change size of `lozenge` class to make them bigger
+- Change `background-color` to add more contrast
+- Add inline style to `input[search]`
