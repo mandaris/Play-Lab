@@ -1,0 +1,14 @@
+{{ define "main" }}
+{{ "<!-- _default/list.html -->" | safeHTML }}
+{{ if .Title }}
+<div class="object-effect">
+  <h2 class="list-title-header">{{ .Title }}</h2>
+</div>
+{{ end }}
+
+{{ range .Paginator.Pages }}
+{{ partial "article.html" . }}
+{{ end }}
+{{ partial "site-pagination.html" . }}
+
+{{ end }}
