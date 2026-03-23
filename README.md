@@ -247,3 +247,11 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 - Change size of `lozenge` class to make them bigger
 - Change `background-color` to add more contrast
 - Add inline style to `input[search]`
+
+1.8.05
+- Add `object-effect` to pagination
+- Simplify `blockquote` and `details` elements
+- Fix error referencing string that was not available in rss
+- Make logo more prominent
+- Add more padding in `object-effect`
+- Filter out the Crucial Track posts from the main index for now
