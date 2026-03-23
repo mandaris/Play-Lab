@@ -865,11 +865,12 @@ pre.mermaid {
 
 .logo {
   display: inline;
-  height: 1.5em;
+  height: 2em;
   /* top: 3px; */
   /* float: inline-start; */
   vertical-align: middle;
-  margin: auto
+  margin: auto;
+  filter: none;
 }
 
 #search-information {
