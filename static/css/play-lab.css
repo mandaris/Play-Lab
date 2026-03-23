@@ -675,7 +675,7 @@ ul>li>input[type="checkbox"]:checked::before {
 .object-effect {
   border: 1px solid var(--accent, currentColor);
   background-color: var(--background-alt);
-  padding: min(8px, 1rem);
+  padding: min(10px, 1rem);
   border-radius: var(--border-radius, 0.5rem);
   box-shadow: var(--accent) 0.1rem 0.1rem 0.1rem;
 }
@@ -845,8 +845,10 @@ pre.mermaid {
 /* Block */
 
 .pagination {
+/* 
   margin-top: 1rem;
   margin-bottom: 0px;
+ */
   display: grid;
   grid-template-columns: 2;
 
