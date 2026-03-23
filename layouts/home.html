@@ -1,7 +1,9 @@
 {{  define "main" }}
 {{- $pages := where site.RegularPages "Type" "post" }}
 {{/* {{- $pages = where $pages "Params.title" "ne" nil }} */}}
-{{- $paginator := .Paginate $pages 10 }}
+{{- $hidden_posts := where $pages "Params.categories" "intersect" (slice "Crucial Track") }}
+{{- $filtered_posts := $pages | symdiff $hidden_posts }}
+{{- $paginator := .Paginate $filtered_posts 10 }}
 {{- range $paginator.Pages }}
 {{ partial "article.html" . }}
 {{- end }}
