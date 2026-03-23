@@ -50,7 +50,7 @@
       {{- $itemTitle = .Title }}
       {{- else }}
       {{- $niceDate := .Date.Format (default "January 2, 2006 3:04 PM" .Site.Params.date_format) }}
-      {{- $itemTitle = printf "Post - %s%s" $niceDate | printf "%s"}}
+      {{- $itemTitle = printf "Post - %s" $niceDate | printf "%s"}}
       {{- end }}
       <title>{{ $itemTitle }}</title>
       <link>{{ .Permalink }}</link>
