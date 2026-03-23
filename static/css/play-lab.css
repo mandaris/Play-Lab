@@ -369,9 +369,7 @@ blockquote {
   padding-left: .5rem;
   box-shadow: 0 2px 4px var(--accent);
   background-color: var(--background-mid);
-  margin-inline-start: .5em;
-  margin-inline-end: .5em;
-  margin-inline: 1em;
+  margin: 1em;
   overflow-y: auto;
   & footer {
     text-align: end;
@@ -386,7 +384,7 @@ h3,
 h4,
 h5,
 h6 {
-/*   transition: var(--standard-transition); */
+  /* transition: var(--standard-transition); */
   /* transition-timing-function: cubic-bezier(.7, 0, .3, 1); */
   /* line-height: normal; */
   /* text-shadow: 1px 1px 1px var(--accent); */
@@ -845,10 +843,6 @@ pre.mermaid {
 /* Block */
 
 .pagination {
-/* 
-  margin-top: 1rem;
-  margin-bottom: 0px;
- */
   display: grid;
   grid-template-columns: 2;
 
@@ -979,10 +973,10 @@ pre.mermaid {
 details {
   border: 1px solid var(--accent);
   border-radius: var(--border-radius, 0.5rem);
-  filter: var(--standard-filter);
+  box-shadow: 0 2px 4px var(--accent);
   background-color: var(--background-mid);
   padding: min(10px, 1em);
-  margin-inline: min(10px, 1em);
+  margin: min(10px, 1em);
 
   &::details-content {
     opacity: 0;
