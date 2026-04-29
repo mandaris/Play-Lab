@@ -104,15 +104,15 @@
 
 {{ with .Site.Params.Author.name -}}
 <meta name="author" content="{{ . }}">
-{{- end }}
-{{ with .Site.Params.twitter_username }}
+{{ end }}
+{{- with .Site.Params.twitter_username }}
 <link rel="me" href="https://twitter.com/{{ . }}">
 <meta name="twitter:site" content="@{{ . }}">
 <meta name="twitter:creator" content="@{{ . }}">
 <meta property="twitter:domain" content="{{ (urls.Parse site.BaseURL).Host }}">
-{{- end }}
+{{ end }}
 
-{{ if .Param "math" }}
+{{- if .Param "math" }}
 {{ partialCached "math.html" . }}
 {{- end }}
 
