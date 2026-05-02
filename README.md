@@ -262,3 +262,6 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 - Add flag to remove goldmark warnings
 - Update math js to later version
 - Change padding on `<code>` and `<blockquote>` 
+
+1.9.01
+- Add `index.html` back to repository
