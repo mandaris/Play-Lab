@@ -37,7 +37,6 @@
   {{- $icons = merge $icons (dict . "xbox-x.svg") }}
 {{- end }}
 
-
 {{- if eq .Type "alert" }}
 {{- /* Render admonition. */}}
 {{- $type := cond (index $icons .AlertType) .AlertType "info" }}
@@ -45,8 +44,10 @@
 
 <aside class="admonition {{ .AlertType }}">
   <header class="admonition-header">
-    {{ if templates.Exists (printf "partials/%s" $iconFile) }}
+    {{ if templates.Exists (printf "_partials/%s" $iconFile) }}
     {{- partialCached $iconFile . }}
+    {{ else }}
+    File not found
     {{- end }}
     {{- with .AlertTitle }}
     <h3>{{ . }}</h3>

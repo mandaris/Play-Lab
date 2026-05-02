@@ -54,12 +54,13 @@
       {{- end }}
       <title>{{ $itemTitle }}</title>
       <link>{{ .Permalink }}</link>
-      <pubDate>{{ .PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
-      {{- with $authorEmail }}<author>{{ . }}{{ with $authorName }} ({{ . }}){{ end }}</author>{{ end }}
+      <pubDate>{{ .PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>{{- with $authorEmail }}
+      <author>{{ . }}{{ with $authorName }} ({{ . }}){{ end }}</author>{{ end }}
       <guid>{{ .Permalink }}</guid>
       <description>{{ .Content | html }}</description>
-      {{ range .Params.categories }}
-            <category>{{ . }}</category>
+      <source:markdown>{{ .RawContent | html }}</source:markdown>
+      {{ range .Params.categories -}}
+      <category>{{ . }}</category>
       {{ end }}
       
 {{- with .Params.categories }}

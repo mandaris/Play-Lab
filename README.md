@@ -254,4 +254,11 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 - Fix error referencing string that was not available in rss
 - Make logo more prominent
 - Add more padding in `object-effect`
-- Filter out the Crucial Track posts from the main index for now
+- Filter out the Crucial Track posts from the main index for now 
+
+1.9.00
+- Change the structure of the [theme to match new template system in hugo](https://gohugo.io/templates/new-templatesystem-overview/)
+- Add markdown to rss feed
+- Add flag to remove goldmark warnings
+- Update math js to later version
+- Change padding on `<code>` and `<blockquote>` 

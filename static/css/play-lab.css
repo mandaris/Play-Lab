@@ -121,7 +121,7 @@
 html {
   font-family: "Atkinson", ui-rounded, 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, Verdana, 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif;
   line-height: 1.6;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   scroll-behavior: smooth;
 }
 
@@ -366,11 +366,12 @@ blockquote {
   border: 1px solid var(--accent);
   border-left: 8px solid var(--accent);
   border-radius: var(--border-radius);
-  padding-left: .5rem;
+  padding: min(8px, 1em);
   box-shadow: 0 2px 4px var(--accent);
   background-color: var(--background-mid);
   margin: 1em;
   overflow-y: auto;
+  
   & footer {
     text-align: end;
     margin-inline-end: .5rem;
@@ -475,8 +476,8 @@ dl code,
 kbd,
 samp {
   background-color: var(--background-mid);
-  padding: 5px;
-  border-radius: 5px;
+  padding: 3px;
+  border-radius: var(--border-radius, 12px);
   border: solid var(--accent) 1px;
 }
 

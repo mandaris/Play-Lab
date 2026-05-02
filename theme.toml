@@ -3,6 +3,7 @@ license = "MIT"
 licenselink = "https://github.com/mandaris/Play-Lab/blob/main/LICENSE"
 tags = ["dark", "dark mode", "light", "light mode"]
 features = ["rss", "categories", "mermaid", "table of contents"]
+ignoreLogs = ['warning-goldmark-raw-html']
 
 [module]
   [module.hugoVersion]
