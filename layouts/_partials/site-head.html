@@ -22,7 +22,7 @@
 <meta itemprop="image" content="/play-lab.png">
 <meta name="twitter:card" content="summary">
 {{ else }}
-{{ if and (isset .Params "title")  (ne .Params.Title "" )}}
+{{- if and (isset .Params "title")  (ne .Params.Title "" )}}
 <title>{{ .Title }} - {{ .Site.Title}}</title>
 <meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}">
 <meta itemprop="name" content="{{ .Title }} - {{ .Site.Title }}">
