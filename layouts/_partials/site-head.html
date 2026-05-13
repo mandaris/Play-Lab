@@ -28,7 +28,7 @@
 <meta itemprop="name" content="{{ .Title }} - {{ .Site.Title }}">
 {{- else }}
 {{ $niceDate := .Date.Format (default "January 2, 2006 3:04 PM" .Site.Params.date_format) }}
-{{- $niceTitle := printf " - %s" $.Site.Title  | printf "MicroPost - %s%s" $niceDate | printf "%s"}}
+{{- $niceTitle := printf " - %s" $.Site.Title  | printf "%s%s" $niceDate | printf "%s"}}
 <title>{{ $niceTitle }}</title>
 <meta property="og:title" content="{{ $niceTitle }}">
 <meta itemprop="name" content="{{ $niceTitle }}">
