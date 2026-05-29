@@ -1,13 +1,13 @@
 {{ define "main" }}
 {{ "<!-- list.archivehtml.html -->" | safeHTML }}
-<article class="object-effect | flow">
+<section class="object-effect | flow">
 	<h2 class="list-title-header">Archive</h2>
 	{{- $list := ($.Site.GetPage "taxonomyTerm" "categories").Pages }}
 	{{- if gt (len $list) 0 }}
-		<section>
+		<header>
 		<h3>Categories</h3>
 			{{ partial "categories-with-count.html" . }}
-		</section>
+		</header>
 	{{- end }}
 	
 	{{- $list := (where .Site.Pages "Type" "post") }}
@@ -23,5 +23,5 @@
 			</p>
 		{{- end }}
 	</section>
-</article>
+</section>
 {{ end }}
