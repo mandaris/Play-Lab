@@ -15,11 +15,12 @@
   content="{{ .Site.Params.itunes_description | safeHTML}}">
 
 <meta property="og:type" content="website">
+<meta itemprop="image" content="/play-lab.png">
 <meta property="og:image" content="/play-lab.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="A beaker with a smily face">
-<meta itemprop="image" content="/play-lab.png">
+
 <meta name="twitter:card" content="summary">
 {{ else }}
 {{- if and (isset .Params "title")  (ne .Params.Title "" )}}
@@ -33,7 +34,7 @@
 <meta property="og:title" content="{{ $niceTitle }}">
 <meta itemprop="name" content="{{ $niceTitle }}">
 {{ end }}
-
+<meta property="og:type" content="article">
 
 <link rel="canonical" href="{{ .Permalink }}">
 {{- with or .Description .Summary site.Params.description | plainify | htmlUnescape }}
@@ -48,20 +49,33 @@
 <meta property="article:section" content="{{ . }}">
 {{- end }}
 {{ end }}
-<meta property="og:type" content="article">
+
+{{ with .Site.Params.Author.name -}}
+<meta name="author" content="{{ . }}">
+{{ end }}
+<link rel="me" href="https://micro.blog/{{ .Site.Params.author.username }}">
+{{- with .Site.Params.twitter_username }}
+<link rel="me" href="https://twitter.com/{{ . }}">
+<meta name="twitter:site" content="@{{ . }}">
+<meta name="twitter:creator" content="@{{ . }}">
+<meta property="twitter:domain" content="{{ (urls.Parse site.BaseURL).Host }}">
+{{ end }}
+{{- with .Site.Params.github_username }}
+<link rel="me" href="https://github.com/{{ . }}">
+{{ end }}
 
 {{- $iso8601 := "2006-01-02T15:04:05Z07:00" }}
 {{- with .PublishDate }}
-<meta property="article:published_time" 
-  {{ .Format $iso8601 | printf "content=%q" | safeHTMLAttr }}>
+<meta property="article:published_time"
+  {{- .Format $iso8601 | printf " content=%q" | safeHTMLAttr }}>
 <meta itemprop="datePublished"
-  {{ .Format $iso8601 | printf "content=%q" | safeHTMLAttr }}>
+  {{- .Format $iso8601 | printf " content=%q" | safeHTMLAttr }}>
 {{ end }}
 {{- with .Lastmod }}
-<meta property="article:modified_time" 
-  {{ .Format $iso8601 | printf "content=%q" | safeHTMLAttr }}>
-<meta itemprop="dateModified" 
-  {{ .Format $iso8601 | printf "content=%q" | safeHTMLAttr }}>
+<meta property="article:modified_time"
+  {{- .Format $iso8601 | printf " content=%q" | safeHTMLAttr }}>
+<meta itemprop="dateModified"
+  {{- .Format $iso8601 | printf " content=%q" | safeHTMLAttr }}>
 {{ end }}
 
 {{- with .Params.audio }}
@@ -97,19 +111,27 @@
 
 <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="shortcut icon" href="/favicon.ico">
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <meta name="apple-mobile-web-app-title" content="Mandaris">
 <link rel="manifest" href="/site.webmanifest">
 
-{{ with .Site.Params.Author.name -}}
-<meta name="author" content="{{ . }}">
+<link rel="EditURI" type="application/rsd+xml" href="{{ "rsd.xml" | absURL }}">
+<link rel="authorization_endpoint" href="https://micro.blog/indieauth/auth">
+<link rel="token_endpoint" href="https://micro.blog/indieauth/token">
+<link rel="subscribe" href="https://micro.blog/users/follow">
+<link rel="webmention" href="https://micro.blog/webmention">
+<link rel="micropub" href="https://micro.blog/micropub">
+<link rel="microsub" href="https://micro.blog/microsub">
+<link rel="alternate" href="{{ "feed.xml" | absURL }}" type="application/rss+xml" title="{{ $.Site.Title }}">
+<link rel="alternate" href="{{ "feed.json" | absURL }}" type="application/json" title="{{ $.Site.Title }}">
+{{ range .AlternativeOutputFormats -}}
+  {{ printf `<link rel="%s" href="%s" type="%s" title="%s">` .Rel .Permalink .MediaType.Type $.Site.Title | safeHTML }}
 {{ end }}
-{{- with .Site.Params.twitter_username }}
-<link rel="me" href="https://twitter.com/{{ . }}">
-<meta name="twitter:site" content="@{{ . }}">
-<meta name="twitter:creator" content="@{{ . }}">
-<meta property="twitter:domain" content="{{ (urls.Parse site.BaseURL).Host }}">
+
+{{ if .Site.Params.has_podcasts }}
+<link rel="alternate" href="{{ "podcast.xml" | absURL }}" type="application/rss+xml" title="Podcast">
+<link rel="alternate" href="{{ "podcast.json" | absURL }}" type="application/json" title="Podcast">
 {{ end }}
 
 {{- if .Param "math" }}
@@ -127,10 +149,14 @@
 <meta name="theme-color" content="#5e81ac" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#5e81ac" media="(prefers-color-scheme: dark)">
 
-{{ "<!-- Local search -->" | safeHTML }}
-<link rel="search" href="/search-space/index.html">
 
-{{ "<!-- Microblog header begin-->" | safeHTML }}
-{{ partial "microblog_head.html" . }}
-{{ "<!-- Microblog header end -->" | safeHTML }}
+<link rel="stylesheet" href="{{ "custom.css" | relURL }}?{{ .Site.Params.theme_seconds }}">
+
+{{ range .Site.Params.plugins_css }}
+<link rel="stylesheet" href="{{ . }}">
+{{ end }}
+
+{{ range $filename := .Site.Params.plugins_html }}
+{{ partial $filename $ }}
+{{ end }}
 </head>
