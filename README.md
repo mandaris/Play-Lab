@@ -265,3 +265,10 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 
 1.9.01
 - Add `index.html` back to repository
+
+2.0.00
+- Change navigation at the top
+- Fix test for share button partial to use `_partials` to match newer file structure
+- Square up buttons
+- Change archive page to be use `<section>` instead of `<article>`
+- Move Micro.blog header information into the theme
