@@ -276,3 +276,5 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
 2.1.00
 - Add [standard.site](https://standard.site) as defined by [Manton's post](https://www.manton.org/2026/05/30/more-notes-on-standardsite.html)
  
+ 2.1.01
+ - Update the `<dialog>` styling

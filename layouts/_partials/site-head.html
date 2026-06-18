@@ -111,7 +111,7 @@
 
 {{- with .Site.Params.bluesky_publication }}
 <link rel="site.standard.publication" href="{{ . | safeURL }}">
-{{ end }}
+{{- end }}
 
 {{- with .Params.bluesky }}
   {{- if and $.Site.Params.bluesky_publication .document }}
