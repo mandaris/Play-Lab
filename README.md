@@ -278,3 +278,7 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
  
  2.1.01
  - Update the `<dialog>` styling
+ 
+ 2.1.02
+ - Change `line-height: inherit` for `<button>` 
+ 

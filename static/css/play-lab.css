@@ -136,10 +136,6 @@ body {
   grid-area: topping;
   /* display: flex; */
   /* justify-content: space-between; */
-  
-  & button {
-    line-height: inherit;
-  }
 
   & .site-nav {
     text-align: end;
@@ -760,6 +756,7 @@ button,
   text-decoration: none;
   text-align: center;
   display: inline-block;
+  line-height: inherit;
   border: 1px solid var(--norderBlue);
   box-shadow: light-dark(var(--nordDark1), var(--nordAqua)) 0.1rem 0.1rem 0.2rem;
   padding: 1px 8px;
