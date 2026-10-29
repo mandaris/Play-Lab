@@ -282,3 +282,5 @@ Theme based off of ideas from [Labarum](https://github.com/mandaris/labarum).
  2.1.02
  - Change `line-height: inherit` for `<button>` 
  
+ 2.2.00
+ - Remove all references to twitter
