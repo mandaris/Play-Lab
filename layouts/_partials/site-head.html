@@ -21,7 +21,7 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="A beaker with a smily face">
 
-<meta name="twitter:card" content="summary">
+
 {{ else }}
 {{- if and (isset .Params "title")  (ne .Params.Title "" )}}
 <title>{{ .Title }} - {{ .Site.Title}}</title>
@@ -54,12 +54,6 @@
 <meta name="author" content="{{ . }}">
 {{ end }}
 <link rel="me" href="https://micro.blog/{{ .Site.Params.author.username }}">
-{{- with .Site.Params.twitter_username }}
-<link rel="me" href="https://twitter.com/{{ . }}">
-<meta name="twitter:site" content="@{{ . }}">
-<meta name="twitter:creator" content="@{{ . }}">
-<meta property="twitter:domain" content="{{ (urls.Parse site.BaseURL).Host }}">
-{{ end }}
 {{- with .Site.Params.github_username }}
 <link rel="me" href="https://github.com/{{ . }}">
 {{ end }}
@@ -87,14 +81,14 @@
 
 {{ with .Params.images -}}
 {{ "<!-- .Params.images -->" | safeHTML }}
-<meta name="twitter:card" content="summary_large_image">
+
 {{- range first 6 . }}
 <meta property="og:image" content="{{ . | absURL }}">
 <meta itemprop="image" content="{{ . | absURL }}">
 {{- end -}}
 {{- else -}}
 {{ "<!-- No .Params.images -->" | safeHTML }}
-<meta name="twitter:card" content="summary">
+
 <meta property="og:image" content="/play-lab.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
