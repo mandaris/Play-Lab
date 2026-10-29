@@ -162,7 +162,7 @@ body {
 
 .plugin-container {
   grid-area: contentSection;
-  line-height: 2rem;
+  line-height: 2em;
 }
 
 .microblog_conversation {
@@ -463,7 +463,7 @@ a h1 {
 
 a:hover h1,
 a:focus h1 {
-  color: var(--accent-opposite-alt);
+/*   color: var(--accent-opposite-alt); */
 /*   text-shadow: 1px 1px 1px var(--accent-opposite); */
   text-decoration-color: var(--accent-opposite);
 }
@@ -756,7 +756,7 @@ button,
   text-decoration: none;
   text-align: center;
   display: inline-block;
-  line-height: inherit;
+  line-height: 1.2em;
   border: 1px solid var(--norderBlue);
   box-shadow: light-dark(var(--nordDark1), var(--nordAqua)) 0.1rem 0.1rem 0.2rem;
   padding: 1px 8px;
@@ -994,32 +994,9 @@ pre.mermaid {
   }
 }
 
-.ico, .icon {
-  height: 1em;
-  width: 1em;
+.icon {
   display: inline;
   position: relative;
-  top: 4px;
-}
-
-.ico-sm .ico {
-  height: .8em;
-  width: .8em;
-}
-
-.ico-md .ico {
-  height: 1.5em;
-  width: 1.5em;
-}
-
-.ico-xl .ico {
-  height: 2em;
-  width: 2em;
-}
-
-.ico-xxl .ico {
-  height: 3em;
-  width: 3em;
 }
 
 details {
